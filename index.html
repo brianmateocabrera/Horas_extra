@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro de horas trabajadas</title>
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <!-- Encabezado -->
+        <header class="card" id="card-top">
+            <div class="card-header" id="fondo-titulo">
+                <h1>Registro de horas trabajadas</h1>
+            </div>
+
+            <div class="card-body">
+                <form>
+                    <label>
+                        Empleado/a:
+                        <input
+                            id="nombre-empleado"
+                            type="text"
+                            name="empleado"
+                        />
+                    </label>
+                    <button id="captura-btn" title="Capturar pantalla">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                    <br />
+                    <label>
+                        Período:
+                        <input id="periodo-inicio" type="date" /> -
+                        <input id="periodo-fin" type="date" />
+                    </label>
+                </form>
+            </div>
+        </header>
+
+        <!-- Tabla principal -->
+        <main class="card-2" id="card-middle">
+            <table>
+                <thead class="card-header">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Entrada</th>
+                        <th>Salida</th>
+                        <th>Total</th>
+                        <th>Notas</th>
+                    </tr>
+                </thead>
+                <tbody class="card-body">
+                    <!-- Filas dinámicas generadas con JS -->
+                </tbody>
+            </table>
+        </main>
+
+        <!-- Pie de página con totales -->
+        <footer class="card" id="card-bottom">
+            <table class="card-body">
+                <thead class="card-header">
+                    <tr>
+                        <th id="cabecera-totales">Hrs. Totales:</th>
+                        <th id="cabecera-totales">Hrs. Contrato:</th>
+                        <th id="cabecera-totales">Hrs. Extra:</th>
+                    </tr>
+                </thead>
+                <tbody class="card-body">
+                    <tr>
+                        <td id="total-periodo">00:00</td>
+                        <td>
+                            <input type="number" id="horas-contrato" />
+                        </td>
+                        <td id="horas-extra">00:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
