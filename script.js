@@ -272,7 +272,7 @@ function mostrarEstadoActual() {
 }
 
 // ===========================
-// ESCALADO Y CAPTURA AUTOMÁTICA
+// ESCALADO Y CAPTURA AUTOMÁTICA 
 // ===========================
 document.getElementById("captura-btn").addEventListener("click", async () => {
     const contenido = document.body; // Captura todo: header, main y footer
@@ -284,7 +284,7 @@ document.getElementById("captura-btn").addEventListener("click", async () => {
     const estiloOriginal = {
         transform: contenido.style.transform,
         transformOrigin: contenido.style.transformOrigin,
-        overflow: document.body.style.overflow
+        overflow: document.body.style.overflow,
     };
 
     // 3. Aplicar escalado visual
