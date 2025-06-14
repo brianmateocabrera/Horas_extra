@@ -1,0 +1,202 @@
+/* =========================
+   Variables CSS (colores base)
+========================= */
+:root {
+    --primario: CornflowerBlue;
+    --secundario: white;
+    --texto-placeholder: Gainsboro;
+
+    --tabla-par: Gainsboro;
+    --tabla-impar: FloralWhite;
+    --tabla-hover: LightBlue;
+    --tabla-borde: Silver;
+}
+
+/* =========================
+   Tipografía global
+========================= */
+html {
+    font-size: 100%; /* Tamaño base del texto */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Aplicar estilo tipográfico consistente */
+input,
+select,
+textarea,
+button,
+label,
+table,
+th,
+td {
+    font-size: 1rem;
+    font-family: inherit;
+    text-align: center;
+}
+
+/* Estilo del texto placeholder */
+::placeholder {
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--texto-placeholder);
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    background-color: var(--primario);
+    color: var(--secundario);
+}
+
+/* Fondo especial para el título */
+#fondo-titulo {
+    background-color: var(--primario);
+    border: 1px solid var(--primario);
+}
+
+/* Ajustes de tamaño de fuente según el tamaño de pantalla */
+@media (max-width: 600px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 112.5%;
+    }
+}
+
+/* =========================
+   Estructura del diseño: tarjetas fijas
+========================= */
+#card-top,
+#card-bottom {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: var(--secundario);
+    color: black;
+    border-color: black;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+#card-top {
+    top: 0;
+    text-align: left;
+    padding: 0.625rem;
+    padding-top: 0;
+}
+
+#card-bottom {
+    bottom: 0;
+    padding: 0.625rem;
+}
+
+/* Área desplazable entre las tarjetas */
+#card-middle {
+    margin-top: 0rem;
+    margin-bottom: 6.25rem;
+    overflow-y: auto;
+    overflow-x: auto;
+    background: var(--secundario);
+    padding: 0rem 0.625rem;
+    box-sizing: border-box;
+}
+
+/* =========================
+   Formularios e Inputs
+========================= */
+form {
+    text-align: left;
+}
+
+input {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+    min-width: 2rem;
+    width: auto;
+    box-sizing: content-box;
+}
+
+/* Inputs numéricos sin flechas */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Inputs de fecha sin icono de calendario */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Inputs destacados con tamaño mayor */
+form,
+#nombre-empleado,
+#periodo-inicio,
+#periodo-fin,
+#cabecera-totales,
+#total-periodo,
+#horas-contrato,
+#horas-extra {
+    font-size: 1.5rem;
+}
+
+/* =========================
+   Tablas
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Encabezado fijo con fondo y sombra */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--primario);
+    color: white;
+    z-index: 10;
+    font-weight: bold;
+    padding: 0.5rem;
+    box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
+}
+
+/* Celdas de tabla con borde inferior */
+table td,
+table th {
+    border-bottom: 1px solid var(--tabla-borde);
+    padding: 0.5rem;
+    min-width: 5rem;
+}
+
+/* Colores alternos por fila */
+table tbody tr:nth-child(even) {
+    background-color: var(--tabla-par);
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: var(--tabla-impar);
+}
+
+/* Efecto hover para filas */
+table tbody tr:hover {
+    background-color: var(--tabla-hover);
+    cursor: pointer;
+}
